@@ -9,7 +9,10 @@ def text_file():
         file.write(text)
     yield file_path
 
-def test_count_words_and_sentences(text_file):
-    words, sentences = count_words_and_sentences(text_file)
+def test_count_words(text_file):
+    words, _ = count_words_and_sentences(text_file)
     assert words == 70
+
+def test_count_sentences(text_file):
+    _, sentences = count_words_and_sentences(text_file)
     assert sentences == 3
